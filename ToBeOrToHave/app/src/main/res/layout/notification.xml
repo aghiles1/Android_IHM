@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/notif_image"
+        android:src="@drawable/events"/>
+    <TextView
+        android:layout_width="750dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Nouveaux evenements"
+        android:layout_gravity="center"
+        android:textSize="40dp"
+        android:id="@+id/notif_text"/>
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/aswitch"
+        android:layout_gravity="center"
+        android:gravity="right"/>
+</LinearLayout>
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/notif_image1"
+        android:src="@drawable/truck"/>
+    <TextView
+        android:layout_width="750dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="l'arrivée des livraisons"
+        android:layout_gravity="center"
+        android:textSize="40dp"
+        android:id="@+id/notif_text1"/>
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/aswitch1"
+        android:checked="true"
+        android:layout_gravity="center"
+        android:gravity="right"/>
+</LinearLayout>
+</LinearLayout>
