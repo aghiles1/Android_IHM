@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -52,7 +53,7 @@ public class NotifAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = convertView;
-        NotifAdapter.ViewHolder viewHolder;
+        final NotifAdapter.ViewHolder viewHolder;
         if(v == null){
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             v = inflater.inflate(R.layout.notification, parent, false);
@@ -65,7 +66,13 @@ public class NotifAdapter extends BaseAdapter {
         else {
             viewHolder = (NotifAdapter.ViewHolder)v.getTag();
         }
-        Notif news = (Notif) getItem(position);
+        final Notif news = (Notif) getItem(position);
+        viewHolder.aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                news.setChecked(isChecked);
+            }
+        });
+        viewHolder.aSwitch.setChecked(news.getIsChecked());
         viewHolder.textView.setText(news.getText());
         viewHolder.imageView.setImageResource(news.getImage());
         return v;

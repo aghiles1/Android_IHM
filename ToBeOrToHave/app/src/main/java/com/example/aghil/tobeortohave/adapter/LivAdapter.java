@@ -100,9 +100,9 @@ public class LivAdapter extends BaseAdapter {
         @Override
         protected  String doInBackground(Livraison... item) {
             if ((item[0].getTemps()-((System.currentTimeMillis()/60000.0)-item[0].getCurrentTime()))>=0)
-                return item[0].getLiv()+" lui reste "+(int)(item[0].getTemps()-((System.currentTimeMillis()/60000.0)-item[0].getCurrentTime()))+" min";
+                return item[0].getLiv()+" arrive dans "+(int)(item[0].getTemps()-((System.currentTimeMillis()/60000.0)-item[0].getCurrentTime()))+" min";
 
-            return item[0].getLiv()+" est complete";
+            return item[0].getLiv()+" est arrivée";
         }
     }
 }

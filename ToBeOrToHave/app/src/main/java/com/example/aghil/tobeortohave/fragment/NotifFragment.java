@@ -11,7 +11,9 @@ import android.widget.ListView;
 
 import com.example.aghil.tobeortohave.R;
 
+import com.example.aghil.tobeortohave.adapter.AdapterList;
 import com.example.aghil.tobeortohave.adapter.NotifAdapter;
+import com.example.aghil.tobeortohave.model.DetailItem;
 import com.example.aghil.tobeortohave.model.Item;
 import com.example.aghil.tobeortohave.model.Notif;
 
@@ -50,8 +52,16 @@ public class NotifFragment extends Fragment implements FragmentInterface{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.notification, container, false);
+        View rootView = inflater.inflate(R.layout.events, container, false);
 
+        final List<Notif> list = new ArrayList<>();
+        NotifAdapter notifAdapter = new NotifAdapter(getContext(),getResources(),list);
+
+        ListView listView = (ListView)rootView.findViewById(R.id.listViewEvent);
+        listView.setAdapter(notifAdapter);
+
+        list.add(new Notif(getResources().getString(R.string.evenement),R.drawable.cloche));
+        list.add(new Notif(getResources().getString(R.string.livraison),R.drawable.truck));
         return rootView;
     }
 

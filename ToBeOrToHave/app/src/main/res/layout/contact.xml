@@ -13,24 +13,28 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        >
+        android:weightSum="1">
 
-    <EditText
-        android:id="@+id/object"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:maxLines="1"
-        android:background="#FFFFFF"
-        android:hint = "Objet"
-        android:textSize="50dp"
-        android:layout_marginBottom="50dp"/>
+        <EditText
+            android:id="@+id/object"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:layout_weight="0.59"
+            android:background="#FFFFFF"
+            android:hint="Objet"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textSize="50dp"
+            android:textStyle="bold" />
     <EditText
         android:id="@+id/edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="40dp"
         android:background="#FFFFFF"
-        android:hint = "@string/message"/>
+        android:hint = "@string/message"
+        android:theme="0"/>
     <Button
         android:id="@+id/envoie"
         android:layout_width="wrap_content"

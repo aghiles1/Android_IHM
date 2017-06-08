@@ -4,6 +4,7 @@ package com.example.aghil.tobeortohave.model;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by aghil on 03/05/2017.
@@ -40,5 +41,9 @@ public class DetailItem {
 
     public String getTitre() {
         return titre;
+    }
+    @Override
+    public boolean equals(Object o){
+        return titre.equals(((DetailItem)o).getTitre());
     }
 }
